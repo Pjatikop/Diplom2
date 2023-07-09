@@ -445,10 +445,11 @@ img {
 }
 
 .singleProject__preview {
-  height: 50vh;
+  width: 250px;
+  height: 250px;
   object-fit: cover;
   object-position: top center;
-  margin-bottom: 3rem;
+  /* margin-bottom: 3rem; */
   border-radius: 0.7rem;
 }
 
