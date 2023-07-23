@@ -1,0 +1,52 @@
+{% extends 'projects/base.html' %}
+
+{% block content %}
+
+  <!-- Main Section -->
+  <main class="settingsPage profile my-md">
+    <div class="container">
+      <div class="layout">
+        <div class="column column--1of3">
+          <div class="card text-center">
+            <div class="card__body dev">
+
+              <img class="avatar avatar--xl dev__avatar" src="{{ profile.profile_image.url }}" />
+              <h2 class="dev__name">{{ profile.name }}</h2>
+
+
+            </div>
+          </div>
+        </div>
+        <div class="column column--2of3">
+          <div class="devInfo">
+            <h3 class="devInfo__title">My radio stations</h3>
+
+              <section class="projectsList">
+                  <div class="container">
+                    <div class="grid grid--three">
+                      {% for r in profile.radio.all %}
+                      <div class="column">
+                        <div class="card project">
+                          <a href="{% url 'project' r.id %}" class="project">
+                            <img class="project__thumbnail" src="{{ r.featured_image.url }}" alt="project thumbnail" />
+                            <div class="card__body">
+                              <h3 class="project__title">{{ r.title }}</h3>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                      {% endfor %}
+                    </div>
+                  </div>
+                </section>
+
+
+
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </main>
+{% endblock %}
