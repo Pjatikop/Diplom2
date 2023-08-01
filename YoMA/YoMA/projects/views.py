@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .models import Project
 
 
+
 def projects(request):
     pr = Project.objects.all()
     context = {
@@ -11,5 +12,8 @@ def projects(request):
 
 
 def project(request, pk):
-    project_obj = Project.objects.get(id=pk)
-    return render(request, 'projects/single-project.html', {'project': project_obj})
+    if request.method == "GET":
+        project_obj = Project.objects.get(id=pk)
+        return render(request, 'projects/single-project.html', {'project': project_obj})
+
+

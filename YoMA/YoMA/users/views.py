@@ -67,3 +67,6 @@ def user_account(request):
     }
     return render(request, 'users/account.html', context)
 
+
+
+

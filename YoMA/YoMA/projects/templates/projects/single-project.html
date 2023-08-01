@@ -47,6 +47,14 @@
 <!--          <script src="https://www.radiobells.com/script/v2_1.js" charset="UTF-8">-->
 
           </script>
+          <br>
+
+          {% if user.is_authenticated %}
+          <form action="{% url 'account' %}" method="post">
+            {% csrf_token %}
+          <button>Add</button>
+          </form>
+          {% endif %}
 
 
           <div class="comments">
